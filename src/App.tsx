@@ -9,6 +9,8 @@ import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
+import { Box } from './context/Box';
+import { ThemeContextProvider } from './context/ThemeContext';
 
 const  App = () => {
   const personName = {
@@ -32,6 +34,9 @@ const  App = () => {
   ]
   return (
     <div className="App">
+      <ThemeContextProvider>
+        <Box></Box>
+      </ThemeContextProvider>
       <Greet name="Solomon" isLoggedIn={true}/> 
       <Person name={personName} />
       <PersonList names = {personList} />
