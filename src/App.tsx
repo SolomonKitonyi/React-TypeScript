@@ -11,6 +11,8 @@ import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
 import { Box } from './context/Box';
 import { ThemeContextProvider } from './context/ThemeContext';
+import { UserProviderContext } from './context/UserContext';
+import { User } from './context/User';
 
 const  App = () => {
   const personName = {
@@ -35,8 +37,11 @@ const  App = () => {
   return (
     <div className="App">
       <ThemeContextProvider>
-        <Box></Box>
+        <Box/>
       </ThemeContextProvider>
+      <UserProviderContext>
+        <User />
+      </UserProviderContext>
       <Greet name="Solomon" isLoggedIn={true}/> 
       <Person name={personName} />
       <PersonList names = {personList} />
