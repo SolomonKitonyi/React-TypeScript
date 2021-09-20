@@ -13,6 +13,9 @@ import { Box } from './context/Box';
 import { ThemeContextProvider } from './context/ThemeContext';
 import { UserProviderContext } from './context/UserContext';
 import { User } from './context/User';
+import { Counter } from './components/class/Counter';
+import { Private } from './components/auth/Private';
+import { Profile } from './components/auth/Profile';
 
 const  App = () => {
   const personName = {
@@ -36,6 +39,8 @@ const  App = () => {
   ]
   return (
     <div className="App">
+      <Private isLoggedIn={false} component={Profile}/>
+      <Counter message="The counter value is"/>
       <ThemeContextProvider>
         <Box/>
       </ThemeContextProvider>
