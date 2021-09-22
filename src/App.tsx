@@ -16,6 +16,7 @@ import { User } from './context/User';
 import { Counter } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
+import { List } from './components/generics/List';
 
 const  App = () => {
   const personName = {
@@ -39,6 +40,8 @@ const  App = () => {
   ]
   return (
     <div className="App">
+      <List items={["Batman","Superman","Wonder Woman"]} onClick={(item) => console.log(item)} />
+      <List items={[1,2,3]} onClick={(item) => console.log(item)} />
       <Private isLoggedIn={false} component={Profile}/>
       <Counter message="The counter value is"/>
       <ThemeContextProvider>
