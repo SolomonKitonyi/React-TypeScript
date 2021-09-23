@@ -17,6 +17,7 @@ import { Counter } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
 import { List } from './components/generics/List';
+import { RandomNumbers } from './components/restrictions/RandomNumbers';
 
 const  App = () => {
   const personName = {
@@ -40,6 +41,7 @@ const  App = () => {
   ]
   return (
     <div className="App">
+      <RandomNumbers value={10} isPositive/>
       <List items={["Batman","Superman","Wonder Woman"]} onClick={(item) => console.log(item)} />
       <List items={[1,2,3]} onClick={(item) => console.log(item)} />
       <Private isLoggedIn={false} component={Profile}/>
