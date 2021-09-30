@@ -9,17 +9,18 @@ import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
-import { Box } from './context/Box';
-import { ThemeContextProvider } from './context/ThemeContext';
-import { UserProviderContext } from './context/UserContext';
-import { User } from './context/User';
+import { Box } from './components/context/Box';
+import { ThemeContextProvider } from './components/context/ThemeContext';
+import { UserProviderContext } from './components/context/UserContext';
+import { User } from './components/context/User';
 import { Counter } from './components/class/Counter';
 import { Private } from './components/auth/Private';
 import { Profile } from './components/auth/Profile';
 import { List } from './components/generics/List';
 import { RandomNumbers } from './components/restrictions/RandomNumbers';
-import { Toast } from './templateliterals/Toast';
-import { CustomButton } from './html/Button';
+import { Toast } from './components/templateliterals/Toast';
+import { CustomButton } from './components/html/Button';
+import { Text } from './components/polymorphic/Text';
 
 const  App = () => {
   const personName = {
@@ -43,6 +44,9 @@ const  App = () => {
   ]
   return (
     <div className="App">
+      <Text as="h1" size='lg'>Nice</Text>
+      <Text as="p" size='md'>Paragraph</Text>
+      <Text as="label" htmlFor="someId" size='sm' color="secondary">Label</Text>
       <CustomButton variant={'primary'}>label</CustomButton>
       <Toast position="center"/>
       <RandomNumbers value={10} isPositive/>
